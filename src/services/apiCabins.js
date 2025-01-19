@@ -47,7 +47,7 @@ export async function createEditCabin(newCabin, id) {
 
   // 3. Delete the cabin IF there was an error uplaoding image
   if (storageError) {
-    await supabase.from("cabins").delete().eq("id", data.id);
+    await supabase.from("Cabins").delete().eq("id", data.id);
     console.error(storageError);
     throw new Error(
       "Cabin image could not be uploaded and the cabin was not created"
